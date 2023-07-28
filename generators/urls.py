@@ -7,6 +7,6 @@ app_name = "generators"
 
 urlpatterns = [
     path("", views.IndexView.as_view(), name="index"),
-    path("/street", views.streetView, name="streets"),
-    path("/building", views.buildingView, name="buildings"),
+    path("street", views.streetView, name="streets"),
+    path("building", views.buildingView, name="buildings"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
