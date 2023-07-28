@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Two Building of Doskvol</h1>
+
+{% for building in buildings %}
+
+
+<p>This is a <em>{{building.rarity}}</em> building made out of {{building.exterior.material}} and visible
+    {{building.exterior.details}}.</p>
+
+<p>You can see {{building.details}}</p>
+
+<p>This building is used as a <b>{{building.use}}</b>.</p>
+<hr>
+{% endfor %}
+{% endblock %}
