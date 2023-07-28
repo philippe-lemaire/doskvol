@@ -4,6 +4,18 @@
 {% block content %}
 <h1>A Street of Doskvol</h1>
 
-<p>{{street}}</p>
+<p>This is a <em>{{street.mood}}</em> {{street.type}}.</p>
+
+<p>You can see {{street.detail}}.</p>
+
+<p>Your senses are met with:
+<ul>
+    {% for k, v in street.impressions.items %}
+    <li>{{k}}: {{v}}</li>
+    {% endfor %}
+</ul>
+</p>
+
+<p>This street is used for <b>{{street.use}}</b>.</p>
 
 {% endblock %}
