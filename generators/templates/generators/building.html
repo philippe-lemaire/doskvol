@@ -5,14 +5,14 @@
 <h1>Two Building of Doskvol</h1>
 
 {% for building in buildings %}
+<h2>A {{building.rarity}} Building</h2>
 
-
-<p>This is a <em>{{building.rarity}}</em> building made out of {{building.exterior.material}} and decorated with
+<p>This building is made out of {{building.exterior.material}} and decorated with
     {{building.exterior.details}}.</p>
 
 <p>A detail you can see: <b>{{building.details}}.</b></p>
 
 <p>This building is used as a <b>{{building.use}}</b>.</p>
-<hr>
+
 {% endfor %}
 {% endblock %}
