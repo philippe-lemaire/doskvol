@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>A citizen of Doskvol</h1>
+
+
+<p>{{person.first_name}} {{person.last_name}} AKA {{person.alias}}, gender {{person.gender}}.</p>
+<p>Goals: {{person.goals}}</p>
+<p>Looks: {{person.looks}}</p>
+<p>Quirk: {{person.quirk}} </p>
+<p>Trait: {{person.trait}}</p>
+<p>Interested in {{person.interests}} </p>
+
+
+
+{% endblock %}
