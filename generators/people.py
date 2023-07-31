@@ -387,6 +387,84 @@ PREFERRED_METHODS = (
     "Chaos",
 )
 
+PROFESSIONS_COMMON = (
+    "Baker",
+    "Barber",
+    "Blacksmith",
+    "Brewer",
+    "Butcher",
+    "Carpenter",
+    "Cartwright",
+    "Chandler",
+    "Clerk",
+    "Cobbler",
+    "Cooper",
+    "Cultivator",
+    "Driver",
+    "Dyer",
+    "Embroiderer",
+    "Fishmonger",
+    "Gondolier",
+    "Guard",
+    "Leatherworker",
+    "Mason",
+    "Merchant",
+    "Roofer",
+    "Ropemaker",
+    "Rug Maker",
+    "Servant",
+    "Shipwright",
+    "Criminal",
+    "Tailor",
+    "Tanner",
+    "Tinkerer",
+    "Vendor",
+    "Weaver",
+    "Woodworker",
+    "Goat Herd",
+    "Messenger",
+    "Sailor",
+)
+
+PROFESSIONS_RARE = (
+    "Advocate",
+    "Architect",
+    "Artist",
+    "Author",
+    "Bailiff",
+    "Apiarist",
+    "Banker",
+    "Bounty Hunter",
+    "Clockmaker",
+    "Courtesan",
+    "Furrier",
+    "Glass Blower",
+    "Diplomat",
+    "Jailer",
+    "Jeweler",
+    "Leech",
+    "Locksmith",
+    "Magistrate",
+    "Musician",
+    "Physicker",
+    "Plumber",
+    "Printer",
+    "Scholar",
+    "Scribe",
+    "Sparkwright",
+    "Tax Collector",
+    "Treasurer",
+    "Whisper",
+    "Composer",
+    "Steward",
+    "Captain",
+    "Spirit Warden",
+    "Journalist",
+    "Explorer",
+    "Rail Jack",
+    "Soldier",
+)
+
 
 class Person:
     """A class to represent a random person you meet in Doskvol"""
@@ -395,8 +473,11 @@ class Person:
         self.gender = roll_gender()
         self.looks = random.choice(LOOKS)
         self.goals = random.choice(GOALS)
-        self.preferredMethods = random.choice(PREFERRED_METHODS)
-        self.profession = None
+        self.preferred_methods = random.choice(PREFERRED_METHODS)
+        if random.randint(1, 6) <= 4:
+            self.profession = random.choice(PROFESSIONS_COMMON)
+        else:
+            self.profession = random.choice(PROFESSIONS_RARE)
         self.trait = random.choice(TRAITS)
         self.interests = random.choice(INTERESTS)
         self.quirk = random.choice(QUIRKS)
